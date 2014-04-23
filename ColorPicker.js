@@ -200,16 +200,9 @@ var ColorPicker = function( options ) {
 
     this.getMousePosition = function( canvas, event ) {
         var rect = canvas.getBoundingClientRect();
-
-        console.log( JSON.stringify( rect ) );
-        console.log( 'rect.left:' + rect.left );
-        console.log( 'x:' + event.clientX );
-        console.log( 'x:' + parseInt( event.clientX - rect.left ) );
-        console.log( 'y:' + event.clientY );
-
         return {
-            x: parseInt( event.clientX - rect.left ),
-            y: parseInt( event.clientY - rect.top )
+            x: event.clientX - rect.left ,
+            y: event.clientY - rect.top
         };
     };
 
